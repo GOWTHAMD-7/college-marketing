@@ -8,6 +8,10 @@ function TeacherDashboard() {
     navigate('/login')
   }
 
+  const handleNavigateToAchievements = () => {
+    navigate('/student-achievements')
+  }
+
   return (
     <div className="dashboard-container">
       <header className="dashboard-header">
@@ -85,7 +89,7 @@ function TeacherDashboard() {
         </div>
 
         <div className="dashboard-grid">
-          <div className="dashboard-card">
+          <div className="dashboard-card" onClick={handleNavigateToAchievements} style={{ cursor: 'pointer' }}>
             <div className="card-icon" style={{ background: 'rgba(0, 212, 255, 0.1)' }}>
               <svg
                 width="24"
@@ -95,23 +99,18 @@ function TeacherDashboard() {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M9 11l3 3L22 4"
+                  d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
                   stroke="var(--color-cyan)"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                />
-                <path
-                  d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
-                  stroke="var(--color-cyan)"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  fill="var(--color-cyan)"
+                  fillOpacity="0.2"
                 />
               </svg>
             </div>
-            <h3>Approvals</h3>
-            <p>Review & approve content</p>
+            <h3>Student Achievements</h3>
+            <p>View student performance & profiles</p>
           </div>
 
           <div className="dashboard-card">

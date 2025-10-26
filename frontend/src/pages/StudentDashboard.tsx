@@ -10,6 +10,10 @@ function StudentDashboard() {
     navigate('/login')
   }
 
+  const handleSocialMediaClick = () => {
+    navigate('/social-media', { state: { username } })
+  }
+
   return (
     <div className="dashboard-container">
       <header className="dashboard-header">
@@ -88,7 +92,7 @@ function StudentDashboard() {
         </div>
 
         <div className="dashboard-grid">
-          <div className="dashboard-card">
+          <div className="dashboard-card" onClick={handleSocialMediaClick}>
             <div className="card-icon" style={{ background: 'rgba(0, 212, 255, 0.1)' }}>
               <svg
                 width="24"
