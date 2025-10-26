@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Login from './pages/Login'
 import StudentDashboard from './pages/StudentDashboard'
 import TeacherDashboard from './pages/TeacherDashboard'
+import CompetitiveDashboard from './pages/CompetitiveDashboard'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/student" element={<StudentDashboard />} />
         <Route path="/teacher" element={<TeacherDashboard />} />
+        <Route path="/competitive-dashboard" element={<CompetitiveDashboard />} />
         <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </Router>
