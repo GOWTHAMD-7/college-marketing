@@ -5,11 +5,13 @@ This folder is prepared for FastAPI integration.
 ## Setup Instructions (for backend developer)
 
 1. Create a virtual environment:
+
 ```bash
 python -m venv venv
 ```
 
 2. Activate the virtual environment:
+
 ```bash
 # Windows
 venv\Scripts\activate
@@ -19,6 +21,7 @@ source venv/bin/activate
 ```
 
 3. Install FastAPI and dependencies:
+
 ```bash
 pip install fastapi uvicorn python-multipart pydantic
 ```
@@ -26,6 +29,7 @@ pip install fastapi uvicorn python-multipart pydantic
 4. Create your FastAPI application in `main.py`
 
 5. Run the server:
+
 ```bash
 uvicorn main:app --reload --port 8000
 ```
@@ -35,6 +39,7 @@ uvicorn main:app --reload --port 8000
 The frontend is configured to proxy `/api` requests to `http://localhost:8000`
 
 Suggested endpoints:
+
 - POST `/api/auth/login` - Authentication
 - GET `/api/student/dashboard` - Student data
 - GET `/api/teacher/dashboard` - Teacher data

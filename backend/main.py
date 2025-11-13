@@ -10,6 +10,15 @@ from models import User, LeetCodeProfile, GitHubProfile, HackerRankProfile
 from scrapers.leetcode_scraper import LeetCodeScraper
 from scrapers import github_scraper, hackerrank_scraper
 from scheduler import start_scheduler
+from dotenv import load_dotenv
+import pathlib
+
+# Load environment variables from backend/.env if present
+_env_path = pathlib.Path(__file__).resolve().parent / '.env'
+load_dotenv(dotenv_path=str(_env_path))
+
+# Import routers after loading env so modules can read env vars at import time
+from app.routes import ai_suggestions, segmentation
 
 # Create tables
 Base.metadata.create_all(bind=engine)
@@ -23,11 +32,17 @@ scheduler = start_scheduler()
 # CORS Configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:5173"],
+    allow_origins=["http://localhost:3000", "http://localhost:5173", "http://localhost:3004"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include AI suggestions router
+app.include_router(ai_suggestions.router, prefix="/api/ai", tags=["AI Suggestions"])
+
+# Include segmentation router
+app.include_router(segmentation.router, prefix="/api/segmentation", tags=["Student Segmentation"])
 
 # Pydantic models for request/response
 class LeetCodeConnectRequest(BaseModel):

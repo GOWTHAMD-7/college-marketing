@@ -14,6 +14,10 @@ function StudentDashboard() {
     navigate('/social-media', { state: { username } })
   }
 
+  const handleContentUploadClick = () => {
+    navigate('/content-upload', { state: { username } })
+  }
+
   return (
     <div className="dashboard-container">
       <header className="dashboard-header">
@@ -112,7 +116,7 @@ function StudentDashboard() {
             <p>Manage posts and engagement</p>
           </div>
 
-          <div className="dashboard-card">
+          <div className="dashboard-card" onClick={handleContentUploadClick}>
             <div className="card-icon" style={{ background: 'rgba(30, 42, 120, 0.1)' }}>
               <svg
                 width="24"

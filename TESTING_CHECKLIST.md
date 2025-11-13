@@ -9,6 +9,7 @@
 ## Backend Testing
 
 ### Installation
+
 - [ ] Navigate to: `cd "d:\college marketing new\backend"`
 - [ ] Run: `.\start-backend.ps1` OR `pip install -r requirements.txt; uvicorn main:app --reload --port 8000`
 - [ ] Backend starts without errors
@@ -17,6 +18,7 @@
 - [ ] Visit http://localhost:8000/ - Returns `{"message": "College Marketing API"}`
 
 ### API Endpoint Testing
+
 - [ ] Run: `.\test-api.ps1` (or test manually with cURL/Postman)
 - [ ] ✅ POST /api/leetcode/connect - Returns profile data
 - [ ] ✅ GET /api/leetcode/profile/{username} - Returns existing profile
@@ -24,6 +26,7 @@
 - [ ] ✅ DELETE /api/leetcode/disconnect/{username} - Returns success message
 
 ### Database Verification
+
 - [ ] File `college_marketing.db` created in backend folder
 - [ ] Contains `users` and `leetcode_profiles` tables
 - [ ] Profile data stored correctly after connect
@@ -31,6 +34,7 @@
 ## Frontend Testing
 
 ### Installation
+
 - [ ] Navigate to: `cd "d:\college marketing new\frontend"`
 - [ ] Run: `.\start-frontend.ps1` OR `npm install; npm run dev`
 - [ ] Frontend starts without errors
@@ -38,6 +42,7 @@
 - [ ] No console errors in browser DevTools (F12)
 
 ### Login Flow
+
 - [ ] Enter username: `student1`
 - [ ] Enter password: `student123`
 - [ ] Click "Login" button
@@ -46,6 +51,7 @@
 - [ ] Repeat for student2-10 and teacher account
 
 ### Navigation
+
 - [ ] Dashboard displays 4-5 feature cards
 - [ ] "Social Media" card is visible
 - [ ] Click "Social Media" card
@@ -54,6 +60,7 @@
 - [ ] "Back to Dashboard" button works
 
 ### Social Media Page UI
+
 - [ ] Page displays 4 platform cards:
   - [ ] LeetCode (Orange icon)
   - [ ] GitHub (Black icon)
@@ -69,6 +76,7 @@
 ## LeetCode Integration Testing
 
 ### Connect Account - Happy Path
+
 - [ ] Click "Connect Account" on LeetCode card
 - [ ] Modal appears with smooth animation
 - [ ] Modal has:
@@ -80,6 +88,7 @@
   - [ ] X button in top-right
 
 ### Test with Real LeetCode User
+
 - [ ] Enter username: `kamyu104` (or any public LeetCode user)
 - [ ] Click "Connect Account"
 - [ ] Button shows "Connecting..." with disabled state
@@ -87,26 +96,31 @@
 - [ ] Card updates with real data:
 
 **Stats Section:**
+
 - [ ] Problems Solved: Shows actual number (not "-")
 - [ ] Ranking: Shows actual ranking (formatted with commas)
 - [ ] Current Streak: Shows streak count
 
 **Difficulty Breakdown:**
+
 - [ ] Easy: Shows count in green badge
-- [ ] Medium: Shows count in yellow badge  
+- [ ] Medium: Shows count in yellow badge
 - [ ] Hard: Shows count in red badge
 - [ ] Badges have hover effect
 
 **Connected Actions:**
+
 - [ ] "Refresh" button appears (cyan color)
 - [ ] "Disconnect" button appears (red border)
 - [ ] "Connect Account" button is hidden
 
 **Footer:**
+
 - [ ] "Last updated: [timestamp]" appears
 - [ ] Timestamp is properly formatted
 
 ### Modal Functionality
+
 - [ ] Click "Cancel" - Modal closes without connecting
 - [ ] Click overlay (outside modal) - Modal closes
 - [ ] Click X button - Modal closes
@@ -115,6 +129,7 @@
 - [ ] Input field accepts just username: `username`
 
 ### Error Handling
+
 - [ ] Enter invalid username: `nonexistent_user_12345`
 - [ ] Click "Connect Account"
 - [ ] Error message appears in red: "Failed to scrape profile..."
@@ -122,6 +137,7 @@
 - [ ] Can retry with correct username
 
 ### Manual Refresh
+
 - [ ] With connected account, click "Refresh" button
 - [ ] Button shows "Updating..." with disabled state
 - [ ] Button has refresh icon animation (optional)
@@ -130,6 +146,7 @@
 - [ ] No errors in console
 
 ### Disconnect Account
+
 - [ ] Click "Disconnect" button
 - [ ] (Optional: Add confirmation dialog)
 - [ ] Profile data disappears
@@ -139,6 +156,7 @@
 - [ ] No errors in console
 
 ### Persistence Testing
+
 - [ ] Connect LeetCode account as student1
 - [ ] Verify data displays
 - [ ] Refresh browser (F5)
@@ -148,6 +166,7 @@
 - [ ] Timestamp matches previous connection
 
 ### Multi-User Testing
+
 - [ ] Login as student1, connect LeetCode profile A
 - [ ] Logout, login as student2, connect LeetCode profile B
 - [ ] Verify each student sees only their profile
@@ -155,6 +174,7 @@
 - [ ] Verify student1 still sees profile A (not B)
 
 ### Auto-Update Testing (Background Scheduler)
+
 - [ ] Connect a LeetCode account
 - [ ] Note the "Last updated" timestamp
 - [ ] Wait 1 hour (or temporarily change scheduler.py to 1 minute for testing)
@@ -171,6 +191,7 @@
 ## Visual & UX Testing
 
 ### Responsive Design
+
 - [ ] Resize browser to mobile width (375px)
 - [ ] Modal is responsive (95% width on mobile)
 - [ ] Platform cards stack vertically
@@ -179,6 +200,7 @@
 - [ ] Difficulty badges stack on mobile
 
 ### Animations & Hover Effects
+
 - [ ] Platform cards have hover effect (lift up, shadow, border)
 - [ ] Platform icons rotate slightly on hover
 - [ ] Buttons have hover effects (color change, shadow)
@@ -187,6 +209,7 @@
 - [ ] Difficulty badges have hover effect
 
 ### Loading States
+
 - [ ] "Loading..." shows when fetching existing profile on mount
 - [ ] "Connecting..." shows during account connection
 - [ ] "Updating..." shows during manual refresh
@@ -194,30 +217,35 @@
 - [ ] Input field disables during loading
 
 ### Error States
+
 - [ ] Error message styled with red background and border
 - [ ] Error message is readable and helpful
 - [ ] Error doesn't break page layout
 - [ ] Can dismiss error and retry
 
 ## Browser Compatibility
+
 - [ ] Chrome/Edge - All features work
 - [ ] Firefox - All features work
 - [ ] Safari (if available) - All features work
 - [ ] Mobile browsers - All features work
 
 ## Performance Testing
+
 - [ ] Profile fetch completes in < 10 seconds
 - [ ] Page doesn't freeze during scraping
 - [ ] No memory leaks (check DevTools Performance)
 - [ ] Smooth animations (60fps)
 
 ## Database Integrity
+
 - [ ] After multiple connect/disconnect cycles
 - [ ] No duplicate entries in database
 - [ ] Orphaned records are cleaned up
 - [ ] Timestamps are accurate
 
 ## Edge Cases
+
 - [ ] Try connecting same LeetCode account to different students
 - [ ] Try connecting when backend is down (should show error)
 - [ ] Try very long usernames (UI doesn't break)
@@ -226,6 +254,7 @@
 - [ ] Try whitespace-only string (should handle gracefully)
 
 ## Final Integration Test
+
 - [ ] Fresh browser (clear cache/cookies)
 - [ ] Start backend with `.\start-backend.ps1`
 - [ ] Start frontend with `.\start-frontend.ps1`
@@ -244,6 +273,7 @@
 - [ ] Verify data persisted (still in database)
 
 ## Documentation
+
 - [ ] README.md is up-to-date
 - [ ] SETUP_GUIDE.md is accurate
 - [ ] All code is commented
@@ -251,6 +281,7 @@
 - [ ] Environment variables documented (if any)
 
 ## Optional Enhancements (Future)
+
 - [ ] Add loading skeleton instead of "Loading..."
 - [ ] Add confirmation dialog for disconnect
 - [ ] Add profile preview before connecting
@@ -263,15 +294,15 @@
 
 ## Test Results Summary
 
-**Date:** _______________
-**Tester:** _______________
+**Date:** ******\_\_\_******
+**Tester:** ******\_\_\_******
 
-**Backend Tests:** _____ / _____ passed
-**Frontend Tests:** _____ / _____ passed
-**Integration Tests:** _____ / _____ passed
+**Backend Tests:** **\_** / **\_** passed
+**Frontend Tests:** **\_** / **\_** passed
+**Integration Tests:** **\_** / **\_** passed
 
-**Critical Issues Found:** _______________
-**Notes:** _______________
+**Critical Issues Found:** ******\_\_\_******
+**Notes:** ******\_\_\_******
 
 ---
 

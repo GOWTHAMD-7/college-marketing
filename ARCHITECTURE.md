@@ -105,6 +105,7 @@
 ## Component Flow Diagram
 
 ### User Login Flow
+
 ```
 ┌──────┐     ┌───────────┐     ┌─────────────┐
 │ User │────►│ Login.tsx │────►│ Validation  │
@@ -127,6 +128,7 @@
 ```
 
 ### LeetCode Integration Flow
+
 ```
 ┌──────┐
 │ User │ Clicks "Connect Account"
@@ -208,6 +210,7 @@
 ```
 
 ### Auto-Update Flow (Background Scheduler)
+
 ```
 ┌───────────────────┐
 │ FastAPI Startup   │
@@ -267,6 +270,7 @@
 ## Technology Stack Details
 
 ### Frontend Stack
+
 ```
 ┌─────────────────────────────────────────┐
 │         Development Tools               │
@@ -300,6 +304,7 @@
 ```
 
 ### Backend Stack
+
 ```
 ┌─────────────────────────────────────────┐
 │         Web Framework                   │
@@ -334,6 +339,7 @@
 ## Data Flow Architecture
 
 ### Request-Response Cycle
+
 ```
 Frontend                Backend              Database           External API
    │                       │                     │                   │
@@ -366,6 +372,7 @@ Frontend                Backend              Database           External API
 ## Security Architecture
 
 ### Authentication (Current - Dummy)
+
 ```
 ┌──────────┐
 │ Frontend │ Validates against hardcoded credentials
@@ -380,6 +387,7 @@ Frontend                Backend              Database           External API
 ```
 
 ### Future Authentication (Recommended)
+
 ```
 ┌──────────┐
 │ Frontend │
@@ -413,6 +421,7 @@ Frontend                Backend              Database           External API
 ## Deployment Architecture (Production Ready)
 
 ### Current (Development)
+
 ```
 ┌──────────────────────────┐
 │  Developer Machine       │
@@ -436,6 +445,7 @@ Frontend                Backend              Database           External API
 ```
 
 ### Recommended (Production)
+
 ```
 ┌──────────────────────────┐
 │  Frontend Server         │
@@ -702,18 +712,21 @@ Backend Error Handling
 ## Performance Considerations
 
 ### Frontend Optimization
+
 - React component memoization opportunities
 - CSS animations use transform (GPU accelerated)
 - Lazy loading for additional platforms
 - Debounce user input in modal
 
 ### Backend Optimization
+
 - Database connection pooling (SQLAlchemy)
 - Rate limiting for external API calls
 - Caching layer (Redis) for frequent queries
 - Async/await for concurrent scraping (future)
 
 ### Database Optimization
+
 - Indexes on username columns
 - Foreign key constraints for data integrity
 - Consider PostgreSQL for production (better concurrency)
@@ -730,5 +743,5 @@ Backend Error Handling
 
 ---
 
-*Architecture designed for the College Marketing & Branding Platform*
-*LeetCode Integration - Version 1.0*
+_Architecture designed for the College Marketing & Branding Platform_
+_LeetCode Integration - Version 1.0_

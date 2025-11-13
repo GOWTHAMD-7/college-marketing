@@ -165,6 +165,16 @@
   border-color: var(--color-cyan);
   box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.1);
   transform: translateY(-2px);
+  animation: inputGlow 0.3s ease-out;
+}
+
+@keyframes inputGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.1);
+  }
 }
 
 .form-group input.input-error {

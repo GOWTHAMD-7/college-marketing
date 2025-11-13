@@ -25,16 +25,19 @@ college-marketing-new/
 ### Frontend Setup
 
 1. Navigate to the frontend folder:
+
 ```bash
 cd frontend
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -44,22 +47,26 @@ npm run dev
 ### Backend Setup
 
 1. Navigate to the backend folder:
+
 ```bash
 cd backend
 ```
 
 2. Create and activate a virtual environment:
+
 ```bash
 python -m venv venv
 venv\Scripts\activate  # Windows
 ```
 
 3. Install dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
 
 4. Run the FastAPI server:
+
 ```bash
 uvicorn main:app --reload --port 8000
 ```
@@ -67,16 +74,19 @@ uvicorn main:app --reload --port 8000
 ## 🔐 Demo Credentials
 
 ### Student Access
+
 - Email: `students.bitsathy.ac.in`
 - Password: `123456`
 
 ### Teacher Access
+
 - Email: `teacher.bitsathy.ac.in`
 - Password: `123456`
 
 ## 🎨 Design Theme
 
 **Minimal AI Professional Theme**
+
 - Primary: Navy Blue (#1E2A78)
 - Accent: Cyan (#00D4FF)
 - Background: White (#FFFFFF)
@@ -85,6 +95,7 @@ uvicorn main:app --reload --port 8000
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - React 18
 - TypeScript
 - React Router DOM
@@ -92,6 +103,7 @@ uvicorn main:app --reload --port 8000
 - CSS3
 
 ### Backend (Planned)
+
 - FastAPI
 - Python 3.8+
 - PostgreSQL/MongoDB

@@ -7,6 +7,7 @@ A **full-stack LeetCode profile integration** system that automatically scrapes 
 ### ✅ Backend (FastAPI + SQLite + APScheduler)
 
 **Files Created:**
+
 - `backend/main.py` - FastAPI app with 4 REST endpoints
 - `backend/models.py` - SQLAlchemy models (User, LeetCodeProfile)
 - `backend/database.py` - Database configuration
@@ -15,6 +16,7 @@ A **full-stack LeetCode profile integration** system that automatically scrapes 
 - `backend/requirements.txt` - Python dependencies
 
 **Features:**
+
 - ✅ POST /api/leetcode/connect - Connect account and scrape profile
 - ✅ GET /api/leetcode/profile/{username} - Fetch stored profile
 - ✅ PUT /api/leetcode/update/{username} - Manual refresh
@@ -27,10 +29,12 @@ A **full-stack LeetCode profile integration** system that automatically scrapes 
 ### ✅ Frontend (React + TypeScript)
 
 **Files Created/Modified:**
+
 - `frontend/src/pages/SocialMedia.tsx` - Full LeetCode integration UI
 - `frontend/src/pages/SocialMedia.css` - Complete styling with modal
 
 **Features:**
+
 - ✅ Modal for entering LeetCode URL/username
 - ✅ Real-time profile scraping with loading states
 - ✅ Comprehensive stats display:
@@ -50,6 +54,7 @@ A **full-stack LeetCode profile integration** system that automatically scrapes 
 ## 📊 Data Collected
 
 For each LeetCode profile:
+
 - Username
 - Total problems solved
 - Easy/Medium/Hard breakdown
@@ -65,23 +70,27 @@ For each LeetCode profile:
 ### Quick Start
 
 **Terminal 1 (Backend):**
+
 ```powershell
 cd "d:\college marketing new\backend"
 .\start-backend.ps1
 ```
 
 **Terminal 2 (Frontend):**
+
 ```powershell
 cd "d:\college marketing new\frontend"
 .\start-frontend.ps1
 ```
 
 **Browser:**
+
 ```
 http://localhost:5173
 ```
 
 ### Login & Test
+
 1. Login with: `student1` / `student123`
 2. Click "Social Media" card
 3. Click "Connect Account" on LeetCode card
@@ -123,22 +132,26 @@ college marketing new/
 ## 🎯 Key Features
 
 ### 1. Auto-Update Scheduler
+
 - Runs every 1 hour automatically
 - Updates ALL connected profiles
 - Logs activity to console
 - No manual intervention needed
 
 ### 2. Multi-User Support
+
 - Each student has isolated profile
 - student1's profile ≠ student2's profile
 - Secure data separation
 
 ### 3. Real-Time Scraping
+
 - Uses LeetCode's official GraphQL API
 - Fetches fresh data on-demand
 - Stores in database for quick access
 
 ### 4. Beautiful UI
+
 - AI-themed design (Navy + Cyan)
 - Animated modal with glassmorphism
 - Color-coded difficulty badges
@@ -147,6 +160,7 @@ college marketing new/
 ## 📝 API Examples
 
 ### Connect Account
+
 ```bash
 curl -X POST http://localhost:8000/api/leetcode/connect \
   -H "Content-Type: application/json" \
@@ -154,16 +168,19 @@ curl -X POST http://localhost:8000/api/leetcode/connect \
 ```
 
 ### Get Profile
+
 ```bash
 curl http://localhost:8000/api/leetcode/profile/student1
 ```
 
 ### Manual Update
+
 ```bash
 curl -X PUT http://localhost:8000/api/leetcode/update/student1
 ```
 
 ### Disconnect
+
 ```bash
 curl -X DELETE http://localhost:8000/api/leetcode/disconnect/student1
 ```
@@ -171,6 +188,7 @@ curl -X DELETE http://localhost:8000/api/leetcode/disconnect/student1
 ## 🗄️ Database Schema
 
 **leetcode_profiles table:**
+
 ```sql
 CREATE TABLE leetcode_profiles (
     id INTEGER PRIMARY KEY,
@@ -195,6 +213,7 @@ CREATE TABLE leetcode_profiles (
 ## 🎨 UI Components
 
 ### Modal
+
 - Smooth slide-up animation
 - Blur overlay backdrop
 - Input validation
@@ -202,6 +221,7 @@ CREATE TABLE leetcode_profiles (
 - Error display
 
 ### Stats Display
+
 - Problems Solved counter
 - Global Ranking (formatted)
 - Current Streak indicator
@@ -209,6 +229,7 @@ CREATE TABLE leetcode_profiles (
 - Last updated timestamp
 
 ### Action Buttons
+
 - **Connect** - Navy blue with white text
 - **Refresh** - Cyan with white text + loading animation
 - **Disconnect** - Red outline with hover fill
@@ -247,13 +268,13 @@ Stats display on card
 
 ## 🐛 Troubleshooting
 
-| Issue | Solution |
-|-------|----------|
-| CORS Error | Ensure backend on :8000, frontend on :5173 |
-| Profile Not Found | Use full URL or verify username is correct |
-| Backend Won't Start | Run `pip install -r requirements.txt` |
-| Frontend Build Error | Delete `node_modules`, run `npm install` |
-| Database Not Created | Check write permissions in backend folder |
+| Issue                 | Solution                                      |
+| --------------------- | --------------------------------------------- |
+| CORS Error            | Ensure backend on :8000, frontend on :5173    |
+| Profile Not Found     | Use full URL or verify username is correct    |
+| Backend Won't Start   | Run `pip install -r requirements.txt`         |
+| Frontend Build Error  | Delete `node_modules`, run `npm install`      |
+| Database Not Created  | Check write permissions in backend folder     |
 | Scheduler Not Running | Verify "Scheduler started" message in console |
 
 ## 📚 Documentation Files
@@ -266,6 +287,7 @@ Stats display on card
 ## 🚀 Next Steps
 
 You can now:
+
 1. **Test the integration** - Follow SETUP_GUIDE.md
 2. **Add more platforms** - GitHub, HackerRank, LinkedIn
 3. **Enhance UI** - Add charts, graphs, comparisons
@@ -278,6 +300,7 @@ You can now:
 ## 🎓 What You've Learned
 
 Through this project, you've implemented:
+
 - ✅ Full-stack web development (React + FastAPI)
 - ✅ RESTful API design
 - ✅ Web scraping with GraphQL
@@ -294,6 +317,7 @@ Through this project, you've implemented:
 ## ✨ Highlights
 
 **Most Impressive Features:**
+
 1. **Automatic hourly updates** - Set it and forget it
 2. **Real-time scraping** - Fresh data on demand
 3. **Beautiful modal UI** - Professional animations
@@ -305,7 +329,7 @@ Through this project, you've implemented:
 - **API Docs**: http://localhost:8000/docs (when backend running)
 - **Setup Guide**: See SETUP_GUIDE.md
 - **Test Checklist**: See TESTING_CHECKLIST.md
-- **Quick Start Scripts**: 
+- **Quick Start Scripts**:
   - `backend/start-backend.ps1`
   - `frontend/start-frontend.ps1`
   - `backend/test-api.ps1`
@@ -317,6 +341,7 @@ Through this project, you've implemented:
 Your LeetCode integration is **100% complete** and ready to use!
 
 **Start testing now:**
+
 ```powershell
 # Terminal 1
 cd "d:\college marketing new\backend"

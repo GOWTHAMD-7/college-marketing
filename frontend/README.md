@@ -22,16 +22,19 @@ A modern React + TypeScript application with AI-themed professional design.
 ### Installation
 
 1. Navigate to the frontend folder:
+
 ```bash
 cd frontend
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -41,10 +44,12 @@ npm run dev
 ## Demo Credentials
 
 ### Student Login
+
 - **Email:** students.bitsathy.ac.in
 - **Password:** 123456
 
 ### Teacher Login
+
 - **Email:** teacher.bitsathy.ac.in
 - **Password:** 123456
 
@@ -82,12 +87,13 @@ The frontend is configured to proxy API requests to the backend at `http://local
 All requests to `/api/*` will be forwarded to the FastAPI backend.
 
 Example API call:
+
 ```typescript
-const response = await fetch('/api/auth/login', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ username, password })
-})
+const response = await fetch("/api/auth/login", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ username, password }),
+});
 ```
 
 ## Theme Colors

@@ -5,6 +5,7 @@ This guide will help you set up and test the full LeetCode integration with auto
 ## ✅ What's Been Implemented
 
 ### Backend (Complete)
+
 - ✅ FastAPI REST API with 4 endpoints
 - ✅ SQLite database with User and LeetCodeProfile models
 - ✅ LeetCode GraphQL scraper module
@@ -12,6 +13,7 @@ This guide will help you set up and test the full LeetCode integration with auto
 - ✅ CORS configuration for frontend integration
 
 ### Frontend (Complete)
+
 - ✅ Modal for LeetCode URL input
 - ✅ Dynamic stats display (problems solved, ranking, streaks)
 - ✅ Difficulty breakdown (Easy/Medium/Hard) with colored badges
@@ -48,6 +50,7 @@ uvicorn main:app --reload --port 8000
 ```
 
 You should see:
+
 ```
 INFO:     Uvicorn running on http://127.0.0.1:8000
 INFO:     Application startup complete.
@@ -59,6 +62,7 @@ Scheduler started - will update LeetCode profiles every hour
 ### Verify Backend
 
 Open browser and visit:
+
 - **API Docs**: http://localhost:8000/docs
 - **Health Check**: http://localhost:8000/ (should return `{"message": "College Marketing API"}`)
 
@@ -83,6 +87,7 @@ npm run dev
 ```
 
 You should see:
+
 ```
   VITE v5.x.x  ready in XXX ms
   ➜  Local:   http://localhost:5173/
@@ -112,10 +117,12 @@ You should see:
 2. Click **"Connect Account"** button
 3. A modal will appear asking for LeetCode URL
 4. Enter a valid LeetCode profile:
+
    - **Option 1**: Full URL: `https://leetcode.com/u/username/`
    - **Option 2**: Just username: `username`
-   
+
    **Test with real profiles**:
+
    - `kamyu104` (Very active user)
    - `lee215` (Contest master)
    - Any public LeetCode username
@@ -128,16 +135,19 @@ You should see:
 Once connected, you'll see:
 
 **Stats Section:**
+
 - 📊 Problems Solved: Total count
 - 🏆 Ranking: Global position
 - 🔥 Current Streak: Days
 
 **Difficulty Breakdown:**
+
 - 🟢 Easy: Count in green badge
 - 🟡 Medium: Count in yellow badge
 - 🔴 Hard: Count in red badge
 
 **Action Buttons:**
+
 - 🔄 **Refresh**: Manually update data
 - 🔌 **Disconnect**: Remove account
 
@@ -198,6 +208,7 @@ print(cursor.fetchall())
 Test endpoints directly:
 
 ### Connect Account
+
 ```powershell
 curl -X POST "http://localhost:8000/api/leetcode/connect" `
   -H "Content-Type: application/json" `
@@ -205,16 +216,19 @@ curl -X POST "http://localhost:8000/api/leetcode/connect" `
 ```
 
 ### Get Profile
+
 ```powershell
 curl http://localhost:8000/api/leetcode/profile/student1
 ```
 
 ### Update Profile
+
 ```powershell
 curl -X PUT http://localhost:8000/api/leetcode/update/student1
 ```
 
 ### Disconnect
+
 ```powershell
 curl -X DELETE http://localhost:8000/api/leetcode/disconnect/student1
 ```
@@ -222,18 +236,21 @@ curl -X DELETE http://localhost:8000/api/leetcode/disconnect/student1
 ## 🎨 Visual Features
 
 ### Modal Design
+
 - Glassmorphism overlay with blur
 - Smooth animations (fadeIn, slideUp)
 - Responsive on mobile
 - Close on overlay click or X button
 
 ### Stats Display
+
 - Color-coded difficulty badges
 - Hover effects on all cards
 - Loading spinners during data fetch
 - Error messages with red styling
 
 ### Buttons
+
 - Navy blue "Connect Account"
 - Cyan "Refresh" with loading state
 - Red "Disconnect" with hover effect
@@ -244,7 +261,8 @@ curl -X DELETE http://localhost:8000/api/leetcode/disconnect/student1
 
 **Symptom**: Console shows "CORS policy blocked"
 
-**Solution**: 
+**Solution**:
+
 - Ensure backend is running on port 8000
 - Check `main.py` has CORS middleware
 - Frontend should be on port 5173
@@ -254,6 +272,7 @@ curl -X DELETE http://localhost:8000/api/leetcode/disconnect/student1
 **Symptom**: Error message after entering username
 
 **Solutions**:
+
 1. Verify username is correct (case-sensitive)
 2. Try full URL format: `https://leetcode.com/u/username/`
 3. Ensure profile is public (not private)
@@ -264,6 +283,7 @@ curl -X DELETE http://localhost:8000/api/leetcode/disconnect/student1
 **Symptom**: Import errors or module not found
 
 **Solution**:
+
 ```powershell
 pip install --upgrade fastapi uvicorn sqlalchemy apscheduler requests beautifulsoup4
 ```
@@ -273,6 +293,7 @@ pip install --upgrade fastapi uvicorn sqlalchemy apscheduler requests beautifuls
 **Symptom**: No auto-updates after 1 hour
 
 **Check**:
+
 1. Backend terminal should show: "Scheduler started"
 2. Look for scheduler logs after 1 hour
 3. Restart backend if needed
@@ -282,6 +303,7 @@ pip install --upgrade fastapi uvicorn sqlalchemy apscheduler requests beautifuls
 **Symptom**: Click "Connect Account" but nothing happens
 
 **Solution**:
+
 1. Check browser console (F12) for errors
 2. Ensure JavaScript is enabled
 3. Try hard refresh: Ctrl+Shift+R
@@ -338,6 +360,7 @@ Once LeetCode is working, you can add:
 3. **LinkedIn** - Connections, posts, endorsements
 
 Follow the same pattern:
+
 - Create scraper in `backend/scrapers/`
 - Add model to `models.py`
 - Add endpoints to `main.py`
@@ -347,6 +370,7 @@ Follow the same pattern:
 ## 📞 Need Help?
 
 Check these resources:
+
 - **API Documentation**: http://localhost:8000/docs
 - **Backend Logs**: Terminal running uvicorn
 - **Frontend Logs**: Browser DevTools Console (F12)
